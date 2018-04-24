@@ -12,6 +12,8 @@
 top_dir  := $(PWD)
 ngx_dir  := $(top_dir)/nginx
 ngx_conf := nginx/objs/ngx_auto_headers.h
+ngx_bin  := $(ngx_dir)/objs/nginx
+module_src := $(shell find module -name *.c -o -name *.h)
 
 #####################################
 ## functions
@@ -31,7 +33,9 @@ endef
 #####################################
 ## targets and rules
 #####################################
-all: $(ngx_conf)
+all: $(ngx_bin)
+
+$(ngx_bin): $(ngx_conf) $(module_src)
 	make -C nginx -j4
 
 $(ngx_conf): nginx
@@ -41,7 +45,8 @@ nginx:
 	$(call get-ngx)
 
 clean:
-	@ rm -rf nginx/objs/addon/module/*
+	@ rm -rf $(ngx_dir)/objs/addon/module/*
+	@ rm -rf $(ngx_bin)
 
 distclean:
 	@ rm -rf nginx

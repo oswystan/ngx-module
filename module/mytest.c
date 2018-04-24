@@ -28,11 +28,11 @@ typedef struct {
 
 static ngx_command_t ngx_http_mytest_commands[] = {
     {
-        ngx_string("mytest2"),//指令名称，在配置文件中使用
+        ngx_string("mytest2"),
         NGX_HTTP_LOC_CONF | NGX_CONF_1MORE,
-        ngx_http_mytest2, // 回调函数
-        NGX_HTTP_LOC_CONF_OFFSET, //位置
-        0, //指令的值保存的位置
+        ngx_http_mytest2,
+        NGX_HTTP_LOC_CONF_OFFSET,
+        0,
         NULL
     },
 
@@ -91,6 +91,7 @@ static ngx_http_module_t ngx_http_mytest_module_ctx = {
     ngx_http_mytest_create_loc_conf,
     NULL
 };
+
 
 ngx_module_t ngx_http_mytest_module2 = {
     NGX_MODULE_V1,
