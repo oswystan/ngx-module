@@ -1,3 +1,5 @@
-ngx_addon_name="ngx_http_mytest_module2"
-HTTP_MODULES="$HTTP_MODULES ngx_http_mytest_module2"
-NGX_ADDON_SRCS="$NGX_ADDON_SRCS $ngx_addon_dir/mytest.c"
+ngx_addon_name="ngx_rest_api"
+HTTP_MODULES="$HTTP_MODULES ngx_rest_api"
+NGX_ADDON_SRCS="$NGX_ADDON_SRCS $ngx_addon_dir/ngx_rest_api.c"
+NGX_ADDON_DEPS="$NGX_ADDON_DEPS $ngx_addon_dir/libngx_rest.a"
+CORE_LIBS="$CORE_LIBS $ngx_addon_dir/libngx_rest.a $(g++ -print-file-name=libstdc++.a)"
