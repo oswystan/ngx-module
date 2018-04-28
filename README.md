@@ -1,5 +1,5 @@
 ## WHAT IS THIS
-A mini nginx tiny restful api gateway framework written in c++11. Have fun with it :-)
+A tiny nginx restful api gateway framework written in c++11. Have fun with it :-)
 
 ## HOWTO
 
