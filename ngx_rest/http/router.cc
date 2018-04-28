@@ -34,14 +34,14 @@ int HttpRouter::Serve(HttpRequest& req, HttpResponseWriter& resp) {
     }
     auto lst = matcher->second;
     smatch sm;
-    int ret = -1;
+    int ret = NGX_HTTP_NOT_FOUND;
     for (auto it=lst.begin(); it!=lst.end(); it++) {
         regex_match(req.Uri(), sm, (*it)->regexpr);
         if (sm.size() != 0) {
             req.Param().clear();
             std::for_each(sm.begin(), sm.end(), [&](string e) { req.Param().push_back(e);});
             (*it)->handler->Serve(req, resp);
-            ret = 0;
+            ret = NGX_HTTP_OK;
         }
     }
 

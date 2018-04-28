@@ -64,11 +64,10 @@ extern "C" ngx_int_t ngx_rest_api_call(ngx_http_request_t *r) {
     auto app = HttpApp::Instance();
     auto req = HttpRequest::Create(r);
     auto resp = HttpResponseWriter::Create(r);
-    app->Router().Serve(*req, *resp);
+    int ret = app->Router().Serve(*req, *resp);
     delete req;
     delete resp;
-
-    return NGX_OK;
+    return ret;
 }
 
 extern "C" ngx_int_t ngx_rest_api_init_process(ngx_cycle_t *cycle) {

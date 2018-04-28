@@ -1,1 +1,6 @@
+install
 nginx
+cscope.*
+tags
+**/*.a
+**/*.o
