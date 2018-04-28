@@ -24,7 +24,9 @@ rest_src := ngx_rest/http/router.cc 	\
 
 rest_obj := $(rest_src:.cc=.o)
 
-CPP_FLAGS := -I nginx/src/core -I nginx/objs -I nginx/src/os/unix -I nginx/src/event -I nginx/src/http -I nginx/src/http/modules
+CPP_FLAGS := -I nginx/src/core -I nginx/objs \
+			 -I nginx/src/os/unix -I nginx/src/event \
+			 -I nginx/src/http -I nginx/src/http/modules
 
 #####################################
 ## functions
