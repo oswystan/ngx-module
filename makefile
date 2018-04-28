@@ -16,11 +16,9 @@ ngx_bin  := $(ngx_dir)/objs/nginx
 module_src := $(shell find module -name *.c -o -name *.h)
 
 rest_lib := $(top_dir)/module/libngx_rest.a
-rest_src := ngx_rest/http/router.cc 	\
-			ngx_rest/http/log.cc 		\
-			ngx_rest/http/app.cc 		\
-			ngx_rest/http/request.cc 	\
-			ngx_rest/http/response.cc 	\
+rest_src := ngx_rest/http/restful_api.cc \
+			ngx_rest/http/log.cc \
+			ngx_rest/http/restful_app.cc
 
 rest_obj := $(rest_src:.cc=.o)
 

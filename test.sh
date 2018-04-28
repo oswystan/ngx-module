@@ -25,10 +25,7 @@ _end() {
 
 run() {
     _start "test restful api url" && \
-        curl http://localhost:8080/api/servers && \
-        curl http://localhost:8080/api/servers/0987654321abcdef/status && \
-        curl http://localhost:8080/api/servers/0987654321abcdef/clients && \
-        curl http://localhost:8080/api/servers/0987654321abcdef/clients/0987654321
+        curl http://localhost:8080/api/servers
     _end $?
 }
 
