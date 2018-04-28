@@ -7,7 +7,7 @@
 ##         author: wystan
 ##
 #######################################################################
-.PHONY: all build test install doc
+.PHONY: all build test install doc clean distclean cleangx
 
 top_dir  := $(PWD)
 ngx_dir  := $(top_dir)/nginx
@@ -73,10 +73,11 @@ clean:
 	@ rm -rf $(ngx_bin) install 
 	@ rm -rf $(rest_obj) $(rest_lib)
 
-distclean:
+distclean: clean
 	@ rm -rf nginx
 
 $(rest_lib):$(rest_obj)
+	@ rm -f $@
 	@ ar -r -o $@ $^
 
 %.o:%.cc

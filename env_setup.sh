@@ -19,7 +19,7 @@ ngx_file="${dir_sbin}/nginx"
 _help() {
 cat <<!EOF
 
-usage: api <command>
+usage: app <command>
     - start
     - stop
     - restart
@@ -30,7 +30,7 @@ usage: api <command>
 !EOF
 }
 
-api() {
+app() {
     case $1 in
         "start")
             ${ngx_file}
@@ -58,6 +58,6 @@ api() {
     esac
 }
 
-complete -W "start stop restart status log help" api
+complete -W "start stop restart status log help" app
 
 ###########################################################################
