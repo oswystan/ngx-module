@@ -49,7 +49,7 @@ endef
 #####################################
 all: $(ngx_bin)
 
-install:
+install: $(ngx_bin)
 	-killall nginx
 	rm -rf install
 	make -C nginx install
