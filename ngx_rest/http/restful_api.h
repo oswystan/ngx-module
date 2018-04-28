@@ -72,7 +72,8 @@ class HttpRouter {
         PUT,
         GET,
         DELETE,
-        HEAD
+        HEAD,
+        OPTION
     };
     struct RouterMatcher {
         ~RouterMatcher() { delete handler; }
@@ -120,6 +121,8 @@ private:
             return DELETE;
         } else if (m == "HEAD") {
             return HEAD;
+        } else if (m == "OPTION") {
+            return OPTION;
         } else {
             return GET;
         }

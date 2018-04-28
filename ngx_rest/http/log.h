@@ -13,8 +13,6 @@
 #ifndef LOG_H_INCLUDED
 #define LOG_H_INCLUDED
 
-#include <stdio.h>
-
 int log_init(const char* logfile);
 void write_log(const char* fmt, ...);
 

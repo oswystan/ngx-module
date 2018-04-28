@@ -75,7 +75,7 @@ distclean: clean
 	@ rm -rf nginx
 
 $(rest_lib):$(rest_obj)
-	@ rm -f $@
+	@ rm -f $@ $(ngx_bin)
 	@ ar -r -o $@ $^
 
 %.o:%.cc

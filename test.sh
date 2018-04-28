@@ -25,7 +25,7 @@ _end() {
 
 run() {
     _start "test restful api url" && \
-        curl http://localhost:8080/api/servers
+        curl http://localhost:8080/api/demo
     _end $?
 }
 

@@ -13,17 +13,9 @@
 #ifndef NGX_REST_HTTP_RESTFUL_APP_H_INCLUDED
 #define NGX_REST_HTTP_RESTFUL_APP_H_INCLUDED
 
-
 #include "restful_api.h"
 
-class ListServers : public HttpHandler {
-public:
-    virtual ~ListServers(){}
-    void Serve(HttpRequest& req, HttpResponseWriter& resp) {
-        string data = "{\"error\": 0, \"desc\": \"list servers\"}\n";
-        resp.Send(data);
-    }
-};
+//TODO add your app spec class declearation here
 
 #endif /*NGX_REST_HTTP_RESTFUL_APP_H_INCLUDED*/
 
